@@ -765,6 +765,13 @@ screen preferences():
                 ## "check_pref" peuvent être ajoutées ici pour ajouter des
                 ## préférences définies par le créateur du jeu.
 
+                vbox:
+                    style_prefix "radio"
+                    label _("Language")
+                    textbutton "Français" action Language(None)
+                    textbutton "English" action Language("english")
+
+
             null height (4 * gui.pref_spacing)
 
             hbox:
