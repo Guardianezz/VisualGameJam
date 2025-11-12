@@ -35,7 +35,7 @@ define gui.idle_color = '#888888'
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#000000'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
 define gui.hover_color = '#c1e0ff'
@@ -56,7 +56,7 @@ define gui.muted_color = '#3d5166'
 define gui.hover_muted_color = '#5b7a99'
 
 ## Les couleurs utilisées pour les dialogues et les menus de choix.
-define gui.text_color = '#ffffff'
+define gui.text_color = '#000000'
 define gui.interface_text_color = '#ffffff'
 
 
@@ -119,7 +119,7 @@ define gui.name_ypos = 0
 ## L’alignement horizontal du nom du personnage. La valeur peut être 0.0 pour
 ## un alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à
 ## droite.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 1.0
 
 ## La largeur, profondeur et les bords de la zone contenant le nom du
 ## personnage ou « None » pour le dimensionner automatiquement.

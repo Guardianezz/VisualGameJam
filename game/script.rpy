@@ -4,51 +4,125 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
 # Déclarez les personnages utilisés dans le jeu.
-define e = Character(_('Acheron'), color="#5015BF")
-define a = Character('Phainon', color="#f5e58a")
+define a = Character('Agnes',color="#123e5f")
+define m = Character('Mallaury',color="#149a5e")
+define g = Character('Gustave', color="#b01394")
+define b = Character('Baron Vureloi',color="#4a6c8d")
 
+$ default = mallaury_eat_apple
+
+transform upCharacter:
+    #monte le perso
+    yoffset -300
+    linear 0.1
+    #le descend
+    yoffset 0
+    linear 0.1
 
 # Le jeu commence ici
 label start:
 
-    
-    show acheron_walk at left
+    scene bc_fond
+    show mallaury at right
     with dissolve
-    e "Vous venez de créer un nouveau jeu Ren'Py."
 
-    e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
+    m "Alors Gustave qu'allez-vous faire de beau aujourd'hui ?"
+    g "Je vais m'occuper de nettoyer le domaine et vous que comptez vous faire ?"
 
-    show phainon_splash at right
-    a "fonctionne d'un enfer parfait pour ce que je veux faire"
+    m "Je ne sais pas encore avez vous des suggestions mon cher ?"
+    g "Je vous conseille de profitez que le soleil soit à son zénith pour faire un tour au marché, l'air frais vous feras le plus grand bien."
+    m "Un grand merci mon très cher Gustave je vais suivre votre conseil ! En route pour le marché !"
+    
+    hide mallaury
+    with dissolve
+    
+    
+    show agnes at left
+    with dissolve
+
+    a "Je ne sais plus ce que j'avais prévu aujourd'hui."
+
+    a "Ce n'est pas grave, je n'ai qu'a aller me balader dans la forêt."
+    a "Devrais-je prendre le chemin long ou court ?"
     
     menu:
 
-        "Oui.":
-            jump choice1_yes
+        "Chemin Long":
+            a "j'espère que ça ne sera pas trop long"
+            jump choice1_Long
 
-        "Non.":
-            jump choice1_no
+        "Chemin Court":
+            a "ça devrait aller par là"
+            jump choice1_Court
 
-    label choice1_yes:
+    label choice1_Long:
 
-        $ menu_flag = True
+        scene black
+        show agnes at right
+        $ mallaury_eat_apple = False
+         
+        a "Je ne me rappelais pas que ce chemin était si long, je n'en peux plus {i} halètement {/i}"
 
-        e "While creating a multi-path visual novel can be a bit more work, it can yield a unique experience."
+        b "Ho mais est ce que ce ne serait pas ma magnifique Agnès"
+
+        a "Haaa... eeeh bonjour baron Vureloi.. vous pro-profité du-du beau temps é-également..."
+
+        b "Pas de besoin de me vouvoyer, nous sommes quand même assez proche"
+
+        a "ooh oui oui oui vous.. fin tu as raison... "
+
+        a "{i} Juste le voir me répugne au plus haut point, j'ai envie de vomir quand je vois ce pourceau, il faut vite que je parte {/i}"
+
+        a "{i} Je ne veux plus jamais revivre ça, se sentiment d'impuissance,.... plus jamais {/i}"
+
+        scene bc_fond
+
+        m " je suis trop beau, je suis tellement beau que seul Arnaud pourrait me mettre 2 claque"
+
+        m " vous ne me croyez pas ? regarder le "    
+
+        show arnaud at top
+        with Dissolve(5.0)
+        
 
         jump choice_done
 
-    label choice1_no:
+    label choice1_Court:
 
-        $ menu_flag = False
+        scene black
+        show agnes at left
+        show mallaury at offscreenright
 
-        e "Games without menus are called kinetic novels, and there are dozens of them available to play."
+        $ mallaury_eat_apple = True
 
-        jump choice1_done
+        m "{i}Agnes se balade dans la forêt avant de croiser une vieille dame.{/i}"
+        pause 0.5
 
-    label choice1_done:
+        show mallaury at right with moveinleft
+        pause 0.5
+        show agnes at upCharacter
+        pause 0.3
+        show mallaury at right
 
-        # ... the game continues here.
+        m "AGNES ??? MAIS TU FAISAIS DES CHOSES LÀ-BAS !?"
+
+        jump choice_done
+
+
 
     label choice_done:
-        a "ouais trust je gère comme le boss que je suis"
+
+    scene bc_fond
+    show agnes at left
+
+    a "Enfin rentrée"
+
+    m "blabla blabla"
+
+    
+    if mallaury_eat_apple == True:
+        a "tu aurais pu me laisser un morceau de pomme"
+    
+    m "allons par là-bas"
+       
     return
