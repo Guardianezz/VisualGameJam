@@ -9,6 +9,10 @@
 
 ## Bases #######################################################################
 
+init python:
+    style.default.font = "fonts/EnchantedLand.otf"
+    style.default.kerning = 4    # <-- ajoute de l’espace entre les lettres
+
 ## Un nom de jeu intelligible. Il est utilisé pour personnaliser le titre de la
 ## fenêtre par défaut et s’affiche dans l’interface ainsi que dans les rapports
 ## d’erreur.
