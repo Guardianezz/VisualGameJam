@@ -12,6 +12,7 @@
 init python:
     style.default.font = "fonts/EnchantedLand.otf"
     style.default.kerning = 4    # <-- ajoute de l’espace entre les lettres
+    config.main_menu_music = "audio/ambiance_chateau.mp3"
 
 ## Un nom de jeu intelligible. Il est utilisé pour personnaliser le titre de la
 ## fenêtre par défaut et s’affiche dans l’interface ainsi que dans les rapports
@@ -44,7 +45,7 @@ define gui.about = _p("""
 ## l’exécutable. Il ne doit contenir que des caractères ASCII et ne doit pas
 ## contenir d’espace, de virgules ou de points-virgules.
 
-define build.name = "VisualGameJam"
+define build.name = "Damoiselle"
 
 
 ## Sons et musiques ############################################################

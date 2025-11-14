@@ -6,3 +6,11 @@ translate english strings:
     old "VisualGameJam"
     new ""
 
+# TODO: Translation updated at 2025-11-14 15:24
+
+translate english strings:
+
+    # game/options.rpy:23
+    old "Damoiselle"
+    new ""
+

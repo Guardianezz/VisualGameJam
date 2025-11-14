@@ -8,6 +8,11 @@ init offset = -1
 ################################################################################
 ## Styles
 ################################################################################
+screen cadre_hud():
+    zorder 200     # passe au-dessus de l’UI, y compris la textbox
+
+    add "images/cadre_2.png" xpos 0 ypos 0
+
 
 style default:
     properties gui.text_properties()
@@ -311,6 +316,9 @@ screen navigation():
 
         textbutton _("Préférences") action ShowMenu("preferences")
 
+        textbutton _("Crédits") action ShowMenu("credits")
+
+
         if _in_replay:
 
             textbutton _("Fin de la rediffusion") action EndReplay(confirm=True)
@@ -331,8 +339,7 @@ screen navigation():
 
             ## Le bouton pour quitter est banni sur iOS et inutile sur Android
             ## et sur le Web.
-            textbutton _("Quitter") action Quit(confirm=not main_menu)
-
+            textbutton _("Quitter") action Quit(confirm=not main_menu)  
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -902,6 +909,30 @@ style slider_vbox:
 ## de dialogue stocké dans _history_list.
 ##
 ## https://www.renpy.org/doc/html/history.html
+
+screen credits():
+    tag menu
+
+    add "ecranfin.png"  
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        padding (40, 40)
+
+        vbox:
+            spacing 20
+            text "Crédits" size 50
+
+            text "Développeur : Lutumba Kassiala Lionel" color "#fff"
+            text "Art 1 : Loriaux Orane" color "#fff"
+            text "Art 2 : Jenard Baptiste" color "#fff"
+            text "Musique : Wallon Jaden / Jenard Baptiste" color "#fff"
+            text "Game Design 1 : Theys Arnaud" color "#fff"
+            text "Game Design 2 : Meert Luna" color "#fff"
+            
+            textbutton "Retour" action Return()
+
 
 screen history():
 
