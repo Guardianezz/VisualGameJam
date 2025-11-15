@@ -459,7 +459,7 @@ label start:
 
         m "Arg, merci.."
 
-        hide mallaury_heureux
+        hide mallaury_douleur
         with dissolve
 
         hide forgeron_ incomprehension
