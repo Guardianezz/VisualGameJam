@@ -1248,7 +1248,7 @@ translate english strings:
 
     # renpy/common/_errorhandling.rpym:848
     old "Console"
-    new ""
+    new "Console"
 
     # renpy/common/_errorhandling.rpym:850
     old "Opens a console to allow debugging the problem."
